@@ -5,10 +5,10 @@ function Product({ name, price, image }) {
     <div>
       <div className='product-tile'>
         <div className='product-overlay'>
-          <a href='/' className='like-icon'>
+          <a href='#' className='like-icon'>
             <i class='fas fa-heart'></i>
           </a>
-          <a href='/' className='support-icon'>
+          <a href='#' className='support-icon'>
             <i class='fas fa-headset'></i>
           </a>
         </div>
@@ -18,8 +18,8 @@ function Product({ name, price, image }) {
           alt=''
         />
         <div className='product-details'>
-          <h3>{name}</h3>
-          <h3>₹{price}</h3>
+          <h2 className='product-name'>{name}</h2>
+          <h3 className='product-price'>₹{price}</h3>
         </div>
       </div>
     </div>

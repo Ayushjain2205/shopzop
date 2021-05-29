@@ -8,10 +8,26 @@ import Home from "./components/Home/Home";
 
 function App() {
   const [shops, setShops] = useState(null);
+  const [users, setUsers] = useState(null);
   const graphcms = new GraphQLClient(
     "https://api-ap-northeast-1.graphcms.com/v2/ckp8dwi04vju901xp03oz89yu/master"
   );
+
   useEffect(() => {
+    const fetchUsers = async () => {
+      const { users } = await graphcms.request(
+        `{
+          customers {
+           id
+           name
+          email
+          mobile
+        }
+      }`
+      );
+      setUsers(users);
+    };
+
     const fetchShops = async () => {
       const { shops } = await graphcms.request(
         `
@@ -50,6 +66,7 @@ function App() {
       setShops(shops);
     };
 
+    fetchUsers();
     fetchShops();
     console.log(shops);
   }, []);
