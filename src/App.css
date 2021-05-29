@@ -12,18 +12,79 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #7868e6;
-  padding: 10px;
-  font-size: 24px;
+  background-color: #7868e6 !important;
+  padding: 20px;
+  display: flex;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.left-item {
+  margin-left: auto;
+}
+
+.left-heading {
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar h1 {
   margin: 0;
+  font-size: 28px !important;
+  line-height: 1rem;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 24px !important;
+  line-height: 1rem;
 }
 
 .navbar a {
   text-decoration: none;
   color: #f1f1f1;
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+/* Login page */
+.login-page {
+  height: 100vh;
+  margin-top: -50px;
+  background-image: url("https://pbs.twimg.com/media/DGujJp7U0AAHlOm.png");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+
+.login-box {
+  width: 400px;
+  padding-top: 200px;
+}
+
+.brand {
+  font-size: 66px !important;
+  color: #7868e6;
+}
+
+.tagline {
+  text-align: center !important;
+  font-size: 18px !important;
+  color: #005f99;
+}
+
+#submit-login {
+  background-color: #7868e6;
+}
+
+#login-label {
+  color: #005f99;
 }
 
 /* Shop page */
@@ -55,7 +116,7 @@ body {
   display: flex;
 }
 
-.card {
+.Card {
   /* background-color: #b8b5ff; */
   background-image: url("https://i.redd.it/vdhgv54ndnj21.png");
   height: 550px;
@@ -133,6 +194,11 @@ body {
   align-self: start;
 }
 
+.shop-description h4,
+a {
+  font-size: 18px !important;
+}
+
 .description-card {
   margin-left: 65px;
   width: 100%;
@@ -160,9 +226,19 @@ body {
 }
 
 .shop-description {
-  margin-top: 20px;
+  margin-top: 40px;
   padding-left: 10px;
   width: 55%;
+}
+
+.product-details h2 {
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+.product-details h3 {
+  margin-top: 10px;
+  font-size: 22px;
 }
 
 .link {
@@ -217,6 +293,7 @@ body {
   height: 200px;
   width: 200px;
   align-self: center;
+  border-radius: 10px;
 }
 
 .product-details {
@@ -237,6 +314,13 @@ body {
   width: 100%;
   opacity: 0;
   transition: 0.3s ease;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: rgba(225, 225, 225, 0.5);
+}
+
+.product-overlay a {
+  font-size: 40px !important;
 }
 
 .like-icon {

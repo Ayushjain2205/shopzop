@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Catlog from "./Catlog";
+import Modal from "react-bootstrap/Modal";
 import ReactHtmlParser, {
   processNodes,
   convertNodeToElement,
@@ -32,7 +33,7 @@ const handleOnClick = () => {
 
 const ComponentToPrint = React.forwardRef((props, ref) => (
   <div ref={ref}>
-    <div className='card'>
+    <div className='Card'>
       <img
         className='card-image'
         src={`https://media.graphcms.com/${props.shop.logo.handle}`}
@@ -84,7 +85,9 @@ function Shop({ shops }) {
                 />
               </div>
               <div className='shop-description'>
-                <h4>Decription:</h4>
+                <h4 className='desc'>
+                  <strong>Decription:</strong>
+                </h4>
                 <div>{ReactHtmlParser(shop.description.html)}</div>
                 <h4>
                   <i class='fas fa-link'></i>
