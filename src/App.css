@@ -1,38 +1,262 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500;1,700&display=swap");
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #edeef7;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #7868e6;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+/* Shop page */
+.shop-page-div {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.image-slider-holder {
+  height: 200px;
+}
+
+.shop-title {
+  width: 100%;
+  background-color: rgb(228, 251, 255);
+}
+
+.shop-title h1 {
+  margin-top: 0;
+  padding: 1rem;
   text-align: center;
+  font-size: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* card section */
+
+.top-card {
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  /* background-color: #b8b5ff; */
+  background-image: url("https://i.redd.it/vdhgv54ndnj21.png");
+  height: 550px;
+  min-width: 400px;
+  width: 400px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-image {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+  box-shadow: 0 20px 50px rgba(235, 25, 110, 1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.card-category {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.card-first-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.card-location {
+  align-self: start;
+  font-size: 18px;
+}
+
+.card-rating {
+  align-self: end;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+.fa-map-marker-alt {
+  padding: 8px;
+}
+
+.fa-star-half-alt {
+  padding: 8px 8px;
+}
+
+.fa-shipping-fast {
+  padding: 7px 5px;
+}
+
+.card-shipping {
+  align-self: start;
+}
+
+.description-card {
+  margin-left: 65px;
+  width: 100%;
+  border-radius: 15px;
+  background-image: url("https://i.redd.it/vdhgv54ndnj21.png");
+}
+
+.description-holder {
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  background-color: rgba(225, 225, 225, 0.7);
+  border-radius: 15px;
+  display: flex;
+}
+
+.shop-image {
+  width: 40%;
+  align-items: center;
+  margin: 10% 10px;
+}
+
+.shopImg {
+  width: 100%;
+}
+
+.shop-description {
+  margin-top: 20px;
+  padding-left: 10px;
+  width: 55%;
+}
+
+.link {
+  text-decoration: none;
+  padding-left: 5px;
+  color: #7868e6;
+}
+
+.image-btn {
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  font-size: 15px;
+  background-color: #7868e6;
+  color: #f1f1f1;
+  margin: 10px;
+  border: none;
+}
+
+.btn-holder {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* catlog section */
+.catlog-heading {
+  width: 80%;
+  margin: 0px;
+  padding: 20px;
+  font-size: 28px;
+}
+
+.product-holder {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+.product-tile {
+  position: relative;
+  border: 3px solid #7868e6;
+  background-color: #b8b5ff;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.product-image {
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  align-self: center;
+}
+
+.product-details {
+  padding-left: 20px;
+}
+
+.product-tile:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.like-icon {
+  color: rgba(235, 25, 110, 1);
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.support-icon {
+  color: #272133;
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
