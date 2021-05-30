@@ -24,7 +24,7 @@ function Navbar() {
           </h1>
         </Link>
         <div className='left-item mr-auto'>
-          <Button onClick={handleLogOut}>
+          <Button id='logout' onClick={handleLogOut}>
             <h2 className='left-heading'>
               Logout {"  "}
               <i class='fas fa-sign-out-alt'></i>

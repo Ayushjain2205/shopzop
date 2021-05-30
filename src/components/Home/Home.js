@@ -1,18 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../layout/Navbar";
+import Shoptile from "../layout/ShopTile";
 
 function Home({ shops }) {
   return (
     <div>
       <Navbar />
-      <ul>
-        {shops.map(({ name, description, slug }) => (
-          <Link to={`/shops/${slug}`}>
-            <h1>{name}</h1>
-          </Link>
+      <div className='home-shops'>
+        {shops.map(({ name, logo, slug, rating, location, category }) => (
+          <Shoptile
+            name={name}
+            logo={logo.handle}
+            slug={slug}
+            rating={rating}
+            location={location}
+            category={category}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

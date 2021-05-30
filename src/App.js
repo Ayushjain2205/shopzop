@@ -24,6 +24,7 @@ const App = () => {
   const graphcms = new GraphQLClient(
     "https://api-ap-northeast-1.graphcms.com/v2/ckp8dwi04vju901xp03oz89yu/master"
   );
+  console.log(shops);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -49,6 +50,7 @@ const App = () => {
           rating
           slug
           category
+          location
           logo{
             id
             handle

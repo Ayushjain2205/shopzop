@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Catlog from "./Catlog";
-import Modal from "react-bootstrap/Modal";
 import ReactHtmlParser, {
   processNodes,
   convertNodeToElement,
@@ -13,6 +12,7 @@ import {
   exportComponentAsPDF,
   exportComponentAsPNG,
 } from "react-component-export-image";
+import QRCode from "react-qr-code";
 
 const handleOnClick = () => {
   if (navigator.share) {
@@ -43,7 +43,8 @@ const ComponentToPrint = React.forwardRef((props, ref) => (
       <span className='card-category'>{props.shop.category}</span>
       <div className='card-item'>
         <span className='card-location'>
-          <i class='fas fa-map-marker-alt'></i>Bangalore
+          <i class='fas fa-map-marker-alt'></i>
+          {props.shop.location}
         </span>
         <span className='card-rating'>
           <i class='fas fa-star-half-alt'></i> {props.shop.rating}
@@ -55,12 +56,16 @@ const ComponentToPrint = React.forwardRef((props, ref) => (
         </span>
         <span></span>
       </div>
+      <div className='qr-holder'>
+        <QRCode size='130' value={props.shop.websiteLink} />
+      </div>
     </div>
   </div>
 ));
 
 function Shop({ shops }) {
   const { slug } = useParams();
+  const [show, setShow] = useState(false);
 
   const shop = shops.find((shop) => shop.slug === slug);
   const componentRef = useRef();
@@ -70,7 +75,7 @@ function Shop({ shops }) {
       <Navbar />
       <div className='shop-page-div'>
         <div className='shop-title'>
-          <h1>{shop.name}</h1>
+          <h1>✨{shop.name}✨</h1>
         </div>
 
         <div className='top-card'>
